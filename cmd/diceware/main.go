@@ -29,7 +29,7 @@ func gen_rand_num_prefix() int {
 
 	max_iterations := 100
 
-	var num int64 = 0
+	var num big.Int
 
 	for i := 0; i < max_iterations; i++ {
 		num, err := rand.Int(rand.Reader, big.NewInt(max-min))
@@ -41,7 +41,7 @@ func gen_rand_num_prefix() int {
 			break
 		}
 	}
-	return int(num)
+	return int(num.Int64())
 }
 
 //DIPO-CODE
