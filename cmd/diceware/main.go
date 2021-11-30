@@ -24,22 +24,11 @@ var (
 
 //DIPO-CODE
 func gen_rand_num_prefix() int {
-	var min int64 = 10
-	var max int64 = 99
+	// var min int64 = 10
 
-	max_iterations := 100
-
-	var num big.Int
-
-	for i := 0; i < max_iterations; i++ {
-		num, err := rand.Int(rand.Reader, big.NewInt(max-min))
-		if err != nil {
-			panic(err)
-		}
-
-		if num.Int64() >= min {
-			break
-		}
+	num, err := rand.Int(rand.Reader, big.NewInt(99))
+	if err != nil {
+		panic(err)
 	}
 	return int(num.Int64())
 }
